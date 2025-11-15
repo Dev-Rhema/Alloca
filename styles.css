@@ -1092,3 +1092,296 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Testnet Section */
+.testnet {
+  padding: 8rem 5%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.testnet-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.testnet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: rgba(168, 85, 247, 0.1);
+  border: 2px solid #a855f7;
+  border-radius: 50px;
+  margin-bottom: 3rem;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge-pulse {
+  width: 12px;
+  height: 12px;
+  background: #a855f7;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.badge-text {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #a855f7;
+  letter-spacing: 1px;
+}
+
+.testnet-subtitle {
+  font-size: 1.3rem;
+  color: #c4b5fd;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+.testnet-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.testnet-feature {
+  background: rgba(147, 51, 234, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testnet-feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168, 85, 247, 0.1),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.testnet-feature:hover::before {
+  left: 100%;
+}
+
+.testnet-feature:hover {
+  transform: translateY(-10px);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 50px rgba(147, 51, 234, 0.3);
+}
+
+.testnet-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.testnet-feature:hover .testnet-icon {
+  transform: scale(1.2) rotateY(360deg);
+}
+
+.testnet-feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.testnet-feature p {
+  color: #c4b5fd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.testnet-cta {
+  margin-top: 3rem;
+}
+
+.testnet-btn {
+  padding: 1.25rem 3.5rem;
+  background: linear-gradient(135deg, #9333ea, #a855f7);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(147, 51, 234, 0.5);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testnet-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.testnet-btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.testnet-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 50px rgba(147, 51, 234, 0.7);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-arrow {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.testnet-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+.testnet-note {
+  margin-top: 1.5rem;
+  color: #c4b5fd;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Update existing media queries section - add testnet styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .collection-grid,
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testnet responsive styles */
+  .testnet {
+    padding: 5rem 5%;
+  }
+
+  .testnet-badge {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .badge-text {
+    font-size: 0.8rem;
+  }
+
+  .testnet-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .testnet-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .testnet-feature {
+    padding: 2rem 1.5rem;
+  }
+
+  .testnet-icon {
+    font-size: 2.5rem;
+  }
+
+  .testnet-feature h3 {
+    font-size: 1.3rem;
+  }
+
+  .testnet-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .testnet-note {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testnet-badge {
+    padding: 0.5rem 1rem;
+  }
+
+  .badge-text {
+    font-size: 0.75rem;
+  }
+
+  .testnet-feature {
+    padding: 1.5rem 1rem;
+  }
+
+  .testnet-icon {
+    font-size: 2rem;
+  }
+
+  .testnet-feature h3 {
+    font-size: 1.1rem;
+  }
+
+  .testnet-feature p {
+    font-size: 0.9rem;
+  }
+}
